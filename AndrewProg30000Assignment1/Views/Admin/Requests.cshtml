@@ -1,0 +1,31 @@
+﻿@using AndrewProg30000Assignment1.Models
+@model IEnumerable<BorrowRequest>
+
+<h2>Equipment Requests</h2>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Equipment Type</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var r in Model)
+    {
+        <tr>
+            <td>@r.Id</td>
+            <td>@r.EquipmentType</td>
+            <td>@r.Name</td>
+            <td>@r.Role</td>
+            <td>
+                <button type="button" class="btn btn-success">Accept</button>
+                <button type="button" class="btn btn-danger">Deny</button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
