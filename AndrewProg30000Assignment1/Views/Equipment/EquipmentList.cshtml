@@ -1,0 +1,26 @@
+﻿@using AndrewProg30000Assignment1.Models
+@model IEnumerable<Equipment>
+
+<h2>Equipment Listing</h2>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Available</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr class="@(item.IsAvailable ? "table-success" : "table-danger")">
+            <td>@item.Id</td>
+            <td>@item.Type</td>
+            <td>@item.Description</td>
+            <td>@item.IsAvailable</td>
+        </tr>
+    }
+    </tbody>
+</table>
